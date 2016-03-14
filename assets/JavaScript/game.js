@@ -1,10 +1,67 @@
 $(document).ready(function() {
+    // debugger;
+    var buttonDepot = [
+        'monkey',
+        'owl',
+        'koala',
+        'deer',
+        'seal',
+        'hummingbird',
+        'killer whale',
+        'chameleon',
+        'horse',
+        'coyote',
+        'brown bear',
+        'gazelle',
+        'bear',
+        'ocelot',
+        'reindeer',
+        'turtle',
+        'rabbit',
+        'cat',
+        'gorilla',
+        'pig',
+        'dog',
+        'chipmunk',
+        'beaver',
+        'antelope',
+        'squirrel',
+        'black bear',
+        'raccoon',
+        'rhinoceros',
+        'moose',
+        'blue Jay',
+        'iguana'
+        ]
 
+    var buttonMaker = function() {
+        for (j=0;j<buttonDepot.length;j++) {
+            var button = $('<button class="another">').text(buttonDepot[j]);
+            $('#button-field').append(button);  
+        }
+    }
 
-	$('#click').on('click', function(){
-		// debugger;
-        var animal = $('#guess').val();
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
+    buttonMaker();
+
+    
+
+    $('#click').on('click', function(){
+        debugger;
+        var another = $('#guess').val();
+        buttonDepot.push(another)
+        var button = $('<button class="another">').text(another);
+        $('#button-field').append(button);
+    })
+
+    
+    $(document).on('click','.another', function(){
+
+        $('.gif').remove()
+	
+    debugger;
+        
+        var select = $(this).text()
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + select + "&api_key=dc6zaTOxFJmzC&limit=10";
 
         $.ajax({
                 url: queryURL,
@@ -22,14 +79,16 @@ $(document).ready(function() {
                     var gif = $('<div class=gif>').attr('data-value', i);
                    
                     
-                    var p = $('<p class="rating">').text(results[i].rating);
+                    var p = $('<p class="rating">').text('rating: '+results[i].rating);
 
                     var searchImage = $('<img class="image">').attr('src',results[i].images.fixed_height_small_still.url);
             		searchImage.css('margin', '2px').attr('data-name', results[i].id);
                     
                      $('#GIF-field').prepend(gif.append(searchImage).append(p));
+                     console.log('initial still for image# '+i+' url: '+results[i].images.fixed_height_small_still.url)
 
             	}
+                
             })
 
         });

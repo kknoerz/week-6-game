@@ -4,10 +4,29 @@ body {
 	overflow: scroll;
 }
 
+#button-field {
+	width: 95%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+#button-field button {
+	margin: 2px;
+	font-size: 14pt;
+	color: green;
+}
+
+#instruction h1 {
+	color: green;
+	margin-top: 5px;
+	font-size: 24pt;
+	text-align: center;
+}
+
 #GIF-field {
 	width: 95%;
 	background-color: lightgreen;
-	height: 600px;
+	height: 450px;
 	margin: 20px;
 	overflow: scroll;
 	margin: 0 auto;
