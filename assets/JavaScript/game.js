@@ -1,4 +1,4 @@
-$(document).ready(function() {
+// $(document).ready(function() {
     // debugger;
     var buttonDepot = [
         'monkey',
@@ -46,7 +46,7 @@ $(document).ready(function() {
     
 
     $('#click').on('click', function(){
-        debugger;
+        // debugger;
         var another = $('#guess').val();
         buttonDepot.push(another)
         var button = $('<button class="another">').text(another);
@@ -58,7 +58,7 @@ $(document).ready(function() {
 
         $('.gif').remove()
 	
-    debugger;
+    // debugger;
         
         var select = $(this).text()
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + select + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -108,7 +108,7 @@ $(document).ready(function() {
                     method: 'GET'
                 })
                 .done(function(response) {
-                    debugger;
+                    // debugger;
             var still = response.data[0].images.fixed_height_small_still.url
             var moving = response.data[0].images.fixed_height_small.url
             
@@ -133,4 +133,4 @@ $(document).ready(function() {
 
 
 
-}); // *********************jQuery closing tag do not delete 
+// }); // *********************jQuery closing tag do not delete 
