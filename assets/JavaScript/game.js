@@ -93,8 +93,9 @@
 
         });
 
-    $('#clear').on('click', function(){
-        
+    $(document).on('click', '#clear', function(){
+        debugger
+        ;
         $('.gif').remove()
     });
     
