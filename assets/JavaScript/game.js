@@ -54,7 +54,7 @@
         $('#button-field').append(button);
     })
 
-   
+ //This is when you click a button **********************************************  
     $(document).on('click','.another', function(){
 
         $('.gif').remove() //erases all current GIFs when a button is clicked 
@@ -100,6 +100,7 @@
         $('.gif').remove()
     });
     
+    //When you click on the image to make it animate ****************************************************
     $(document).on('click', '.image', function() { //when an image is clicked: 
         // debugger;
         var queryURL = "http://api.giphy.com/v1/gifs?&api_key=dc6zaTOxFJmzC&limit=10&ids="+ $(this).attr('data-name'); //use api id stored in data-name
